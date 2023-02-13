@@ -1,0 +1,19 @@
+<p-calendar 
+    formControlName="date"
+    [showTime]="true"
+    [hourFormat]="'24'"
+    [readonlyInput]="true"
+    [showButtonBar]="true"
+    [disabledDays]="[0,6]"
+    [showTransitionOptions]="'500ms'"
+    [hideTransitionOptions]="'500ms'"
+    selectionMode="multiple"
+    [showIcon]="true"
+    [showClear]="true"
+    >
+    <ng-template pTemplate="header">Header</ng-template>
+    <ng-template pTemplate="date" let-date>
+        <span [ngStyle]="{textDecoration: (date.day < 21 && date.day > 10) ? 'line-through' : 'inherit'}">{{date.day}}</span>
+    </ng-template>
+    <ng-template pTemplate="footer">Footer</ng-template>
+</p-calendar>

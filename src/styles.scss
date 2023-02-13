@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem;
+}
+
+app-autocomplete, 
+app-calendar, 
+app-cascade-select,
+app-checkbox,
+app-chips,
+app-dropdown,
+app-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+}

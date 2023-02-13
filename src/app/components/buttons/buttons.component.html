@@ -1,0 +1,20 @@
+<button pButton 
+    type="button" 
+    icon="pi pi-check" 
+    iconPos="left" 
+    (onClick)="handleClick($event)"
+    class="p-button-success"
+    ></button>
+<p-button label="Click" icon="pi pi-check" iconPos="left"></p-button>
+<button pButton type="button" label="Search" icon="pi pi-search" iconPos="right" class="p-button-text"></button>
+<button pButton type="button" label="Primary" class="p-button-outlined"></button>
+<button pButton type="button" label="Link" class="p-button-link"></button>
+<span class="p-buttonset">
+    <button pButton type="button" label="Save" icon="pi pi-check"></button>
+    <button pButton type="button" label="Delete" icon="pi pi-trash"></button>
+    <button pButton type="button" label="Cancel" icon="pi pi-times"></button>
+</span>
+<p-splitButton label="Save" icon="pi pi-plus" (onClick)="clickButton()" [model]="items"></p-splitButton>
+<p-divider [style]="{'align-self': 'stretch'}"></p-divider>
+
+<p-speedDial [model]="items" direction="right"></p-speedDial>

@@ -1,0 +1,58 @@
+<h5>Basic with float label</h5>
+
+<pre>{{formControl.value | json }}</pre>
+
+<span class="p-float-label p-input-icon-left">
+    <i class="pi pi-spin pi-spinner" [ngStyle]="{'z-index': '100'}"></i>
+    <p-dropdown 
+    [options]="cities" 
+    [formControl]="formControl" 
+    placeholder="Select a City" 
+    [optionLabel]="$any(getName)"
+
+    [showClear]="true"
+    [filter]="true"
+    optionDisabled="disable">
+    <!-- <ng-template let-city pTemplate="selectedItem">
+        <div>selectedItem - {{city.name.name}}</div>
+    </ng-template>
+    <ng-template let-city pTemplate="item">
+        <div>item - {{city.name.name}}</div>
+    </ng-template> -->
+    </p-dropdown>
+</span>
+
+
+<h5>Editable</h5>
+<p-dropdown 
+    [options]="cities" 
+    [(ngModel)]="selectedCity2" 
+    [editable]="true" 
+    optionLabel="name">
+</p-dropdown>
+
+<h5>Group</h5>
+<p-dropdown 
+    [options]="groupedCities" 
+    [(ngModel)]="selectedCity3" 
+    placeholder="Select a City" 
+    [group]="true">
+    <ng-template let-group pTemplate="group">
+        <div class="flex align-items-center">
+            <span>{{group.label}}</span>
+        </div>
+    </ng-template>
+</p-dropdown>
+
+<h5>Multiple Addons</h5>
+<div class="grid">
+    <div class="col-12">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-tags" style="line-height: 1.25;"></i></span>  
+            <span class="p-inputgroup-addon"><i class="pi pi-shopping-cart" style="line-height: 1.25;"></i></span>   
+            <input type="text" pInputText placeholder="Price"> 
+            <span class="p-inputgroup-addon">$</span>  
+            <span class="p-inputgroup-addon">.00</span>      
+        </div>
+    </div>
+</div>

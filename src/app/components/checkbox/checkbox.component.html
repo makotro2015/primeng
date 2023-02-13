@@ -1,0 +1,17 @@
+<form [formGroup]="form">
+    <p-checkbox 
+        name="groupname" 
+        value="val1" 
+        label="Value 1" 
+        [formControl]="form.controls['selectedValues']"
+        (onChange)="info($event)"
+        >
+    </p-checkbox>
+    <p-checkbox 
+        name="groupname" 
+        value="val2" 
+        label="Value 2" 
+        [formControl]="form.controls['selectedValues']"
+        (onChange)="info($event)">
+    </p-checkbox>
+</form>

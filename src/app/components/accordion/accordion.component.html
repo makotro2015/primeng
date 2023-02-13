@@ -1,0 +1,22 @@
+<p-accordion [multiple]="true">
+    <p-accordionTab  
+        [(selected)]="activeState[0]">
+        <ng-template pTemplate="header">Header Content</ng-template>
+        <ng-template pTemplate="content">Body Content</ng-template>
+    </p-accordionTab>
+    <p-accordionTab header="Header 2" 
+        [(selected)]="activeState[1]">
+        Content 2
+    </p-accordionTab>
+    <p-accordionTab header="Header 3" 
+        [(selected)]="activeState[2]" 
+        [disabled]="true">
+        Content 3    
+    </p-accordionTab>
+</p-accordion>
+
+<div class="py-3">
+    <p-button [icon]="activeState[0] ? 'pi pi-minus' : 'pi pi-plus'" (click)="toggle(0)" styleClass="p-button-text" label="Toggle 1st"></p-button>
+    <p-button [icon]="activeState[1] ? 'pi pi-minus' : 'pi pi-plus'" (click)="toggle(1)" styleClass="p-button-text ml-2" label="Toggle 2st"></p-button>
+    <p-button [icon]="activeState[2] ? 'pi pi-minus' : 'pi pi-plus'" (click)="toggle(2)" styleClass="p-button-text ml-2" label="Toggle 3st"></p-button>
+</div>

@@ -1,0 +1,11 @@
+<p-chips 
+    formControlName="cities"
+    separator="," 
+    placeholder="Hint: a, b, c"
+    [max]="3"
+    [showClear]="true"
+    (onAdd)="info($event)">
+    <ng-template let-item pTemplate="item">
+        {{item}} - (active) <i class="pi pi-user ml-2"></i>
+    </ng-template>
+</p-chips>

@@ -1,0 +1,33 @@
+<form [formGroup]="form">
+    <p-autoComplete 
+        class="purple"
+        formControlName="name" 
+        field="name"
+        [suggestions]="results" 
+        (completeMethod)="search($event)"
+        [dropdown]="true"
+        [multiple]="false"
+        [forceSelection]="false"
+        [showTransitionOptions]="'500ms'"
+        [hideTransitionOptions]="'500ms'"
+        [scrollHeight]="'400px'"
+        [dropdownIcon]="'pi pi-chevron-up'"
+        [minLength]="3"
+        [delay]="200"
+        [completeOnFocus]="false"
+        [autoHighlight]="true"
+        [showEmptyMessage]="true"
+        [emptyMessage]="'Попробуй ввести другое имя'"
+        [showClear]="true"
+        [unique]="false"
+        >
+        <!-- <ng-template let-name pTemplate="item">
+            <p-image src="https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg" alt="Image" width="50"></p-image>
+            <div style="font-size:18px;margin:10px">{{name.name}}</div>
+        </ng-template>
+        <ng-template let-name pTemplate="selectedItem">
+            <span style="font-size:18px;color:olivedrab">{{name.name}}</span>
+        </ng-template> -->
+    </p-autoComplete>
+</form>
+
