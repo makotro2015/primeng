@@ -16,6 +16,10 @@ import {DataViewModule} from 'primeng/dataview';
 import {AccordionModule} from 'primeng/accordion';
 import {DividerModule} from 'primeng/divider';
 import {FieldsetModule} from 'primeng/fieldset';
+import {TableModule} from 'primeng/table';
+import {DialogModule} from 'primeng/dialog';
+import {DragDropModule} from 'primeng/dragdrop';
+import {OrderListModule} from 'primeng/orderlist';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +33,8 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
 import { AccordionComponent } from './components/accordion/accordion.component';
 import { FieldsetComponent } from './components/fieldset/fieldset.component';
 import { SplitterComponent } from './components/splitter/splitter.component';
+import TableComponent from './components/table/table.component';
+import { ColumnChangeComponent } from './components/table/column-change/column-change.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +49,8 @@ import { SplitterComponent } from './components/splitter/splitter.component';
     AccordionComponent,
     FieldsetComponent,
     SplitterComponent,
+    TableComponent,
+    ColumnChangeComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +72,10 @@ import { SplitterComponent } from './components/splitter/splitter.component';
     AccordionModule,
     DividerModule,
     FieldsetModule,
+    TableModule,
+    DialogModule,
+    DragDropModule,
+    OrderListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

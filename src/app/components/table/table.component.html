@@ -1,0 +1,29 @@
+<app-column-change [columns]="cols" (setColumns)="onSetColumns($event)"></app-column-change>
+<button pButton type="button" (click)="showSelectedPeople()" icon="pi pi-users" class="p-element p-ripple p-button p-component" label="Show selected people"></button>
+
+<p-table 
+    [columns]="cols" 
+    [value]="people"
+    [reorderableColumns]="true"
+    [(selection)]="selectedPeople"
+    selectionMode="multiple"
+    styleClass="p-datatable-striped">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <ng-container *ngFor="let col of columns">
+                <th *ngIf="col.visible" pReorderableColumn>
+                    {{col.title}}
+                </th>
+            </ng-container>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-man let-columns="columns">
+        <tr [pSelectableRow]="man">
+            <ng-container *ngFor="let col of columns">
+                <td *ngIf="col.visible">
+                    {{man[col.field]}}
+                </td>
+            </ng-container>
+        </tr>
+    </ng-template>
+</p-table>

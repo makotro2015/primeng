@@ -1,0 +1,12 @@
+button {
+    margin-bottom: 2rem;
+}
+
+::ng-deep {
+    .p-orderlist .p-orderlist-list .p-orderlist-item {
+        margin: 1rem;
+        font-size: 22px;
+        display: flex;
+        gap: 1rem;
+    }
+}

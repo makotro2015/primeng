@@ -9,6 +9,8 @@ import { ChipsComponent } from './components/chips/chips.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { FieldsetComponent } from './components/fieldset/fieldset.component';
 import { AutocompleteComponent } from './components/people/autocomplete.component';
+import { SplitterComponent } from './components/splitter/splitter.component';
+import TableComponent from './components/table/table.component';
 
 const routes: Routes = [
   { path: 'autocomplete', component: AutocompleteComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'buttons', component: ButtonsComponent },
   { path: 'accordion', component: AccordionComponent },
   { path: 'fieldset', component: FieldsetComponent },
+  { path: 'splitter', component: SplitterComponent },
+  { path: 'table', component: TableComponent },
 ];
 
 @NgModule({

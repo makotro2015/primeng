@@ -1,0 +1,38 @@
+<p-dialog [(visible)]="tableIsVisible" [modal]="true">
+    <ng-template pTemplate="header">
+        Настройте отображение таблицы
+    </ng-template>
+
+    <p-orderList [value]="columns" [dragdrop]="true">
+        <ng-template let-col pTemplate="item" styleClass="checkbox">
+            <p-checkbox 
+                [value]="col.value" 
+                (onChange)="changeVisibleRow(col, $event)" 
+                [(ngModel)]="selectedCols" 
+                [inputId]="col.id"></p-checkbox>
+            <label [for]="col.id">{{col.title}}</label>
+        </ng-template>
+    </p-orderList>
+
+    <ng-template pTemplate="footer">
+        <p-button 
+            class="tsc-btn-primary"
+            [label]="'Выбрать все'"
+            type="button"
+            (click)="selectAll()">
+        </p-button>
+        <p-button 
+            class="tsc-btn-primary"
+            [label]="'Сбросить все'"
+            type="button"
+            (click)="resetAll()">
+        </p-button>
+        <p-button 
+            class="tsc-btn-primary"
+            [label]="'Сохранить'"
+            type="button"
+            (click)="submit()">
+        </p-button>
+    </ng-template>
+</p-dialog>
+<button pButton type="button" (click)="showDialog()" icon="pi pi-cog" class="p-element p-ripple p-button p-component" label="Settings"></button>

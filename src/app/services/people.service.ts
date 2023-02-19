@@ -2,6 +2,8 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { ajax } from 'rxjs/ajax';
 import { map, catchError, of, debounceTime, distinctUntilChanged, takeUntil, Subject, switchMap } from 'rxjs';
 
+import { Man } from 'src/app/interface/interface'
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +20,17 @@ export class PeopleService implements OnDestroy {
       distinctUntilChanged(),
       switchMap(query => ajax.getJSON(this.baseUrl + 'people?search=' + query)),
       map((peoples: any) => peoples.results),
+      catchError(error => {
+        console.log('error: ', error);
+        return of(error);
+      }),
+      takeUntil(this.destroy$),
+    )
+  }
+
+  getPeople$() {
+    return ajax.getJSON(this.baseUrl + 'people').pipe(
+      map((peoples: any) => <Man[]> peoples.results),
       catchError(error => {
         console.log('error: ', error);
         return of(error);
